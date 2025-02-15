@@ -3,8 +3,8 @@ package ru.practicum.statistic.api;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import ru.practicum.statistic.api.service.StatisticMapper;
-import ru.practicum.statistic.api.storage.StatisticEntity;
+import ru.practicum.statistic.api.mapper.StatisticMapper;
+import ru.practicum.statistic.api.model.StatisticEntity;
 import ru.practicum.statistic.dto.StatisticRequest;
 
 import java.sql.Timestamp;

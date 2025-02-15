@@ -1,8 +1,9 @@
-package ru.practicum.statistic.api.service;
+package ru.practicum.statistic.api.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.practicum.statistic.api.service.StatisticService;
 import ru.practicum.statistic.dto.StatisticRequest;
 import ru.practicum.statistic.dto.StatisticInfo;
 

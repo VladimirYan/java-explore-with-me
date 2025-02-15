@@ -6,7 +6,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import ru.practicum.statistic.api.service.StatisticController;
+import ru.practicum.statistic.api.controller.StatisticController;
 import ru.practicum.statistic.api.service.StatisticService;
 import ru.practicum.statistic.dto.StatisticRequest;
 import ru.practicum.statistic.dto.StatisticInfo;

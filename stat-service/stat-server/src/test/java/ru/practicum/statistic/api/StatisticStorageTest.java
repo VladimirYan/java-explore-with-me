@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
-import ru.practicum.statistic.api.storage.StatisticEntity;
+import ru.practicum.statistic.api.model.StatisticEntity;
 import ru.practicum.statistic.api.storage.StatisticStorage;
 import ru.practicum.statistic.dto.StatisticInfo;
 import ru.practicum.statistic.dto.vlidators.TimeFormatValidator;

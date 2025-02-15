@@ -9,6 +9,7 @@ import jakarta.persistence.criteria.Root;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.practicum.statistic.api.exceptions.NotValidException;
+import ru.practicum.statistic.api.model.StatisticEntity;
 import ru.practicum.statistic.dto.StatisticInfo;
 import ru.practicum.statistic.dto.vlidators.TimeFormatValidator;
 

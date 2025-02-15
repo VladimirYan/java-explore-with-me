@@ -3,6 +3,7 @@ package ru.practicum.statistic.api.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.practicum.statistic.api.exceptions.NotValidException;
+import ru.practicum.statistic.api.mapper.StatisticMapper;
 import ru.practicum.statistic.api.storage.StatisticStorage;
 import ru.practicum.statistic.dto.StatisticRequest;
 import ru.practicum.statistic.dto.StatisticInfo;

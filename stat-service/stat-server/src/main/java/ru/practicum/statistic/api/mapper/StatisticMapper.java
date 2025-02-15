@@ -1,6 +1,6 @@
-package ru.practicum.statistic.api.service;
+package ru.practicum.statistic.api.mapper;
 
-import ru.practicum.statistic.api.storage.StatisticEntity;
+import ru.practicum.statistic.api.model.StatisticEntity;
 import ru.practicum.statistic.dto.StatisticRequest;
 import ru.practicum.statistic.dto.vlidators.TimeFormatValidator;
 
@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class StatisticMapper {
-    private static DateFormat format = new SimpleDateFormat(TimeFormatValidator.PATTERN);
+    private static final DateFormat format = new SimpleDateFormat(TimeFormatValidator.PATTERN);
 
     public static StatisticRequest toDto(StatisticEntity entity) {
         return StatisticRequest.builder()

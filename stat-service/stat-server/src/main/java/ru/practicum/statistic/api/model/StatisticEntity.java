@@ -1,4 +1,4 @@
-package ru.practicum.statistic.api.storage;
+package ru.practicum.statistic.api.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
