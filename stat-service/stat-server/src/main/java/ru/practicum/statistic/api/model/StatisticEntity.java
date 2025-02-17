@@ -34,15 +34,25 @@ public class StatisticEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         StatisticEntity that = (StatisticEntity) o;
-        return Objects.equals(app, that.app) &&
-                Objects.equals(ip, that.ip) &&
-                Objects.equals(uri, that.uri) &&
-                Objects.equals(timestamp, that.timestamp);
+
+        boolean thisIsNew = this.id == 0;
+        boolean thatIsNew = that.id == 0;
+
+        if (thisIsNew && thatIsNew) {
+            return Objects.equals(app, that.app) &&
+                    Objects.equals(ip, that.ip) &&
+                    Objects.equals(uri, that.uri) &&
+                    Objects.equals(timestamp, that.timestamp);
+        }
+
+        return this.id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(app, ip, uri, timestamp);
+        if (id == 0) {
+            return Objects.hash(app, ip, uri, timestamp);
+        }
+        return Long.hashCode(id);
     }
-
 }
