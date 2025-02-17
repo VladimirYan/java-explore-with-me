@@ -58,10 +58,8 @@ public class StatisticStorage {
                 .groupBy(root.get("app"), root.get("uri"))
                 .orderBy(criteriaBuilder.desc(expression));
 
-        var result = entityManager.createQuery(query)
+        return entityManager.createQuery(query)
                 .getResultList();
-
-        return result;
     }
 
     public <T> Optional<Predicate> getPredicate(String start,

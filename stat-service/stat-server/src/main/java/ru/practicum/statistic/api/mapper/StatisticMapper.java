@@ -1,6 +1,7 @@
 package ru.practicum.statistic.api.mapper;
 
 import ru.practicum.statistic.api.model.StatisticEntity;
+import ru.practicum.statistic.dto.StatisticInfo;
 import ru.practicum.statistic.dto.StatisticRequest;
 import ru.practicum.statistic.dto.vlidators.TimeFormatValidator;
 
@@ -32,5 +33,13 @@ public class StatisticMapper {
         entity.setTimestamp(Timestamp.from(timeStamp.toInstant()));
 
         return entity;
+    }
+
+    public static StatisticInfo toDto(ru.practicum.statistic.api.storage.StatisticInfo info) {
+        return StatisticInfo.builder()
+                .app(info.getApp())
+                .uri(info.getUri())
+                .hits(info.getHits())
+                .build();
     }
 }

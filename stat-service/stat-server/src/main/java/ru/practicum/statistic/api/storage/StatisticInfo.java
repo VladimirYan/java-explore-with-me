@@ -5,5 +5,5 @@ public interface StatisticInfo {
 
     String getUri();
 
-    int getHits();
+    long getHits();
 }

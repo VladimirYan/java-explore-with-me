@@ -1,13 +1,15 @@
 package ru.practicum.statistic.api.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "Statistics")
-@Data
+@Getter
+@Setter
 public class StatisticEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

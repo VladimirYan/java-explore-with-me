@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import ru.practicum.statistic.api.mapper.StatisticMapper;
 import ru.practicum.statistic.api.model.StatisticEntity;
+import ru.practicum.statistic.dto.StatisticInfo;
 import ru.practicum.statistic.dto.StatisticRequest;
 
 import java.sql.Timestamp;
@@ -32,35 +33,35 @@ public class StatisticMapperTest {
         Assertions.assertEquals(expectedDto, actualDto);
     }
 
-//    @Test
-//    public void statisticInfoToDtoTest() throws Exception {
-//        var info = new ru.practicum.statistic.api.storage.StatisticInfo() {
-//            @Override
-//            public String getApp() {
-//                return "app";
-//            }
-//
-//            @Override
-//            public String getUri() {
-//                return "uri";
-//            }
-//
-//            @Override
-//            public long getHits() {
-//                return 966L;
-//            }
-//        };
-//
-//        var expectedDto = StatisticInfo.builder()
-//                .app("app")
-//                .uri("uri")
-//                .hits(966L)
-//                .build();
-//
-//        var actualDto = StatisticMapper.toDto(info);
-//
-//        Assertions.assertEquals(expectedDto, actualDto);
-//    }
+    @Test
+    public void statisticInfoToDtoTest() throws Exception {
+        var info = new ru.practicum.statistic.api.storage.StatisticInfo() {
+            @Override
+            public String getApp() {
+                return "app";
+            }
+
+            @Override
+            public String getUri() {
+                return "uri";
+            }
+
+            @Override
+            public long getHits() {
+                return 966L;
+            }
+        };
+
+        var expectedDto = StatisticInfo.builder()
+                .app("app")
+                .uri("uri")
+                .hits(966L)
+                .build();
+
+        var actualDto = StatisticMapper.toDto(info);
+
+        Assertions.assertEquals(expectedDto, actualDto);
+    }
 
     @Test
     public void statisticRequestToNewEntityTest() throws Exception {
