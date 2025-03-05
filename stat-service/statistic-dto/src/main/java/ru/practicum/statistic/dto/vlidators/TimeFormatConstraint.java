@@ -12,7 +12,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = TimeFormatValidator.class)
 public @interface TimeFormatConstraint {
-    String message() default "Формат времени ожидается \"yyyy-MM-dd HH:mm:ss\"";
+    String message() default "Формат времени ожитдается \"yyyy-MM-dd HH:mm:ss\"";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
