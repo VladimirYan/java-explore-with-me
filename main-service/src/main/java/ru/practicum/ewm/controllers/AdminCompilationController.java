@@ -8,7 +8,7 @@ import ru.practicum.ewm.dto.CompilationToAddDto;
 import ru.practicum.ewm.dto.CompilationToUpdateDto;
 
 import jakarta.validation.Valid;
-import ru.practicum.ewm.serices.CompilationService;
+import ru.practicum.ewm.service.CompilationService;
 
 @RestController
 @RequiredArgsConstructor

@@ -91,7 +91,6 @@ public class EndPointhitRepository {
 
 			return Union.ofValue1(appId);
 		} catch (EmptyResultDataAccessException e) {
-			//log.debug("No record found for application [" + application + "]", e);
 			return Union.ofValue2(e);
 		}
 	}
@@ -104,7 +103,6 @@ public class EndPointhitRepository {
 		String sql;
 		if (isUnique) {
 			sql = VIEWS_STATS_SQL.replace("#1#", "count(distinct h.ip)");
-			//sql = VIEWS_STATS_SQL.replace("#1#", "1");
 		} else {
 			sql = VIEWS_STATS_SQL.replace("#1#", "count(*)");
 		}

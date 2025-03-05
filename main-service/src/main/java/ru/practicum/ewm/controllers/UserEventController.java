@@ -9,7 +9,7 @@ import ru.practicum.ewm.dto.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-import ru.practicum.ewm.serices.EventService;
+import ru.practicum.ewm.service.EventService;
 
 import java.util.List;
 

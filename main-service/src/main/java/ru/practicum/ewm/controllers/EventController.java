@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-import ru.practicum.ewm.serices.EventService;
+import ru.practicum.ewm.service.EventService;
 import ru.practicum.statistic.client.StatisticClient;
 
 import java.util.List;

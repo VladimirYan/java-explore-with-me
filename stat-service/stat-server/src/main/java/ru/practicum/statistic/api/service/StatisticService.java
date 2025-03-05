@@ -33,11 +33,7 @@ public class StatisticService {
 
     public EndpointHit postRequest(EndpointHit statisticRequest) {
         try {
-            //var entity = StatisticMapper.toEndPointHitEntity(statisticRequest);
-
             var entity = storage.postStaticEntity(statisticRequest);
-
-            //return StatisticMapper.toDto(entity);
 
             return entity;
         } catch (Exception e) {

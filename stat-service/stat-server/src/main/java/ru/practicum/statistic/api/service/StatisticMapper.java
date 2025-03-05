@@ -25,8 +25,6 @@ public class StatisticMapper {
     }
 
     public static StatisticRequest toDto(EndpointHit entity) {
-        /*var d = entity.getTimestamp();
-        var da = d.format(DateTimeFormatter.ofPattern(TimeFormatValidator.PATTERN));*/
         var timestamp = format.format(entity.getTimestamp());
 
         return StatisticRequest.builder()

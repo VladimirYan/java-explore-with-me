@@ -1,4 +1,4 @@
-package ru.practicum.ewm.serices;
+package ru.practicum.ewm.service;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
