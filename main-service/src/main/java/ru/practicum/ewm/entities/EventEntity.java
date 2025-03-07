@@ -19,17 +19,11 @@ public class EventEntity {
 	@Column(name = "event_id", nullable = false)
 	private Long id;
 
-	@NotBlank
-	@Size(min = 3, max = 120)
 	@Column(nullable = false)
 	private String title;
 
-	@NotBlank
-	@Size(min = 20, max = 2000)
 	private String annotation;
 
-	@NotBlank
-	@Size(min = 20, max = 7000)
 	@Column(nullable = false)
 	private String description;
 
@@ -37,19 +31,15 @@ public class EventEntity {
 	@JoinColumn(name = "cat_id", nullable = false)
 	private CategoryEntity categoryEntity;
 
-	@PositiveOrZero
-	@NotNull
 	private int participantLimit;
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	private EventState state;
 
-	@NotNull
+	@Column(nullable = false)
 	private Boolean paid;
 
-	@NotNull
-	@Future
 	@Column(name = "event_date", nullable = false)
 	private LocalDateTime eventDate;
 
@@ -70,8 +60,7 @@ public class EventEntity {
 	@JoinColumn(name = "initiator_id", nullable = false)
 	private UserEntity initiator;
 
-	@NotNull
-	@Column(name = "request_moderation")
+	@Column(name = "request_moderation", nullable = false)
 	private Boolean requestModeration;
 
 	@Transient
