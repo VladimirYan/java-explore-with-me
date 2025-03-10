@@ -8,7 +8,7 @@ import ru.practicum.ewm.dto.CompilationDto;
 
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-import ru.practicum.ewm.service.CompilationService;
+import ru.practicum.ewm.services.CompilationService;
 
 import java.util.List;
 

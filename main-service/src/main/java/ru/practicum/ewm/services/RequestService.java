@@ -1,4 +1,4 @@
-package ru.practicum.ewm.service;
+package ru.practicum.ewm.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
