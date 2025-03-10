@@ -48,7 +48,7 @@ public class EndPointhitRepository {
 		if (appIdOpt.hasValue2()) {
 			var exception = appIdOpt.getValue2().get();
 
-			log.debug("No record found for application [" + application + "]", exception);
+			log.debug("No record found for application [{}]", application, exception);
 
 			throw new NotValidException(exception.getMessage());
 		}

@@ -8,7 +8,7 @@ import ru.practicum.ewm.dto.CategoryDto;
 
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
-import ru.practicum.ewm.service.CategoryService;
+import ru.practicum.ewm.services.CategoryService;
 
 import java.util.List;
 

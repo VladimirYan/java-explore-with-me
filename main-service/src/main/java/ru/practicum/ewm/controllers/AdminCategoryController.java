@@ -7,7 +7,7 @@ import ru.practicum.ewm.dto.CategoryDto;
 import ru.practicum.ewm.dto.CategoryToAddDto;
 
 import jakarta.validation.Valid;
-import ru.practicum.ewm.service.CategoryService;
+import ru.practicum.ewm.services.CategoryService;
 
 @RestController
 @RequiredArgsConstructor
