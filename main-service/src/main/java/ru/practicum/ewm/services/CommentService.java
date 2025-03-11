@@ -25,8 +25,9 @@ public class CommentService {
 
     @Transactional
     public void deleteComment(long commentId) {
-        if (!commentRepository.existsById(commentId))
+        if (!commentRepository.existsById(commentId)) {
             throw new NotFoundException("Not found comment", commentId);
+        }
 
         commentRepository.deleteById(commentId);
     }
@@ -36,8 +37,9 @@ public class CommentService {
         var comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new NotFoundException("Not found comment", commentId));
 
-        if (comment.getAuthor().getId() != userId)
+        if (comment.getAuthor().getId() != userId) {
             throw new ConflictException("User is not the author of comment.");
+        }
 
         commentRepository.deleteById(commentId);
     }
@@ -65,14 +67,16 @@ public class CommentService {
     public CommentDto updateComment(long commentId, long userId, CommentDto commentDto) {
         var text = commentDto.text();
 
-        if (text == null || text.isBlank())
+        if (text == null || text.isBlank()) {
             return commentDto;
+        }
 
         var commentEntity = commentRepository.findById(commentId)
                 .orElseThrow(() -> new NotFoundException("Not found comment", commentId));
 
-        if (commentEntity.getAuthor().getId() != userId)
+        if (commentEntity.getAuthor().getId() != userId) {
             throw new ConflictException("User is not the author of comment.");
+        }
 
         commentEntity.setText(text);
         commentEntity.setLastUpdateTime(Timestamp.valueOf(LocalDateTime.now()));
@@ -93,8 +97,9 @@ public class CommentService {
     }
 
     public static Pageable initPageable(int from, int size) {
-        if (from <= 0)
+        if (from <= 0) {
             return PageRequest.ofSize(size);
+        }
 
         return PageRequest.of(from / size, size);
     }

@@ -19,15 +19,15 @@ public class CommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "event_id", nullable = false)
     private EventEntity eventEntity;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
     private UserEntity author;
 
-    @Column(name = "text", nullable = false)
+    @Column(name = "comment_text", nullable = false)
     private String text;
 
     @Column(name = "created", nullable = false)
