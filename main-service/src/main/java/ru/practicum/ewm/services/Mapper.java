@@ -1,10 +1,11 @@
-package ru.practicum.ewm.service;
+package ru.practicum.ewm.services;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import ru.practicum.ewm.dto.*;
 import ru.practicum.ewm.entities.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
@@ -102,8 +103,6 @@ public final class Mapper {
 		RequestEntity request = new RequestEntity();
 		request.setRequester(participant);
 		request.setEventEntity(eventEntity);
-		// если для события отключена пре-модерация заявок на участие,
-		// то запрос на участие считается подтвержденным автоматически
 		if (!eventEntity.getRequestModeration()) {
 			request.setStatus(RequestStatus.CONFIRMED);
 		}
@@ -150,4 +149,33 @@ public final class Mapper {
 		categoryEntity.setName(categoryDto.getName());
 		return categoryEntity;
     }
+
+	public static CommentEntity toCommentEntity(CommentDto commentDto) {
+		var entity = new CommentEntity();
+
+		entity.setText(commentDto.text());
+
+		if (commentDto.created() != null)
+			entity.setCreated(Timestamp.valueOf(commentDto.created()));
+		if (commentDto.lastUpdateTime() != null)
+			entity.setLastUpdateTime(Timestamp.valueOf(commentDto.lastUpdateTime()));
+
+		return entity;
+	}
+
+	public static CommentDto toCommentDto(CommentEntity commentEntity) {
+		var builder = CommentDto.builder()
+				.id(commentEntity.getId())
+				.text(commentEntity.getText())
+				.authorId(commentEntity.getAuthor().getId())
+				.eventId(commentEntity.getEventEntity().getId());
+
+		if (commentEntity.getCreated() != null)
+			builder.created(commentEntity.getCreated().toLocalDateTime());
+
+		if (commentEntity.getLastUpdateTime() != null)
+			builder.lastUpdateTime(commentEntity.getLastUpdateTime().toLocalDateTime());
+
+		return builder.build();
+	}
 }
